@@ -13,6 +13,15 @@ a:visited {
 ul {
   list-style: none;
 }
+button {
+  padding: 20px;
+  outline: none;
+  border: none;
+  background-color: #999;
+}
+button:active {
+  background-color: #ddd;
+}
 .clear {
   clear: both;
 }

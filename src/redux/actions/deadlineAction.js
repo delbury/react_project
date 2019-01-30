@@ -14,3 +14,9 @@ export const setDeadline = (value) => ({
   type: SET_DEADLINE,
   value: value
 });
+
+export default {
+  plusDeadline,
+  minusDeadline,
+  setDeadline
+}
