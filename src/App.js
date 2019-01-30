@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './style/App.css'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './views/Home'
+import Game from './views/Game'
+import HeaderBar from './components/HeaderBar'
+import LeftBar from './components/LeftBar'
+import store from './redux/index'
 class App extends Component {
   render() {
+    console.log(store.getState('deadlineReducer'))
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <HeaderBar></HeaderBar>
+          <LeftBar></LeftBar>
+          <div className="content">
+            <Switch>
+              <Route path="/" exact component={Home}></Route>
+              <Route path="/games" component={Game}></Route>
+            </Switch>
+          </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }

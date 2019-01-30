@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.clear {
+  clear: both;
+}
+
+@headerheight: 60px;
+@leftwidth: 15%;
+@rightwidth: 85%;
+/* headerbar 样式 */
+.headerbar {
+  height: @headerheight;
+  background-color: #354f53;
+  box-shadow: 1px 1px 5px #2a3f42;
+
+  & * {
+    color: #fff;
+  }
+  .logo {
+    margin-left: 20px;
+    height: @headerheight;
+    width: @headerheight * 2;
+    background: url(../assets/img/logo.png) no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+  }
+}
+
+/* leftbar 样式 */
+.leftbar {
+  float: left;
+  width: @leftwidth;
+  height: calc(~"100vh - 60px");
+  background-color: #182425;
+
+  ul {
+    li {
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      font-size: 16px;
+      color: #888;
+      cursor: pointer;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+
+        &.active {
+          color: #fff;
+        }
+      }
+      &:hover {
+        color: #fff;
+        background-color: #26383a;
+      }
+    }
+  }
+}
+
+/* content 样式 */
+.content {
+  padding: 20px;
+  float: left;
+  width: @rightwidth;
+  background-color: #eee;
+  height: calc(~"100vh - 60px");
+}
+
+/* game 页面样式 */
+.page-game {
+  .game__list {
+    overflow: hidden;
+    li {
+      margin: 10px 0;
+      padding-right: 20px;
+      float: left;
+
+      a {
+        color: #208f9ea4;
+        font-size: 18px;
+
+        &.active {
+          color: #208f9e;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .game__info {
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}
